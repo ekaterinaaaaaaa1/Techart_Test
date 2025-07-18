@@ -1,0 +1,53 @@
+@import "style.css";
+.news {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 137px;
+}
+
+.news-content {
+    flex-basis: 48%;
+}
+
+.news-img {
+    width: 100%;
+    object-fit: contain;
+}
+
+.menu {
+    margin-top: 72px;
+}
+
+.menu-news-title {
+    color: #6C6E7B;
+}
+
+h1 {
+    margin: 22px 0 63px 0;
+}
+
+h2 {
+    color: #9B407A;
+    margin: 40px 0;
+}
+
+.news-button {
+    width: 283px;
+    margin-top: 40px;
+}
+
+.button-text {
+    margin: 0 0 0 10px;
+}
+
+@media (max-width: 1248px) {
+    .news {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .news-message {
+        order: 2;
+    }
+}
