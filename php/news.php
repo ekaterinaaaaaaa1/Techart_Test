@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../css/news_style.css"> 
 </head>
 <body>
-    <?php include 'header.php'; ?>
+<?php include 'header.php'; ?>
     <div class="container">
         <div class="menu">
             <a href="index.php">
@@ -27,7 +27,7 @@
                     заявил, что неконтактные зюзюмы такие же двухвостые и скандальные как и контактные, только неконтактные.<br><br>Ждем от профессора Голдрама новых 
                     интересных подробностей!</p>
                 <a class="button news-button" href="index.php">
-                    <img class="button-arrow" src="../img/icons/reverse_arrow.svg" alt="Стрелка"></img>
+                    <img class="button-arrow" src="../img/icons/reverse_arrow.svg" data-active="../img/icons/active_reverse_arrow.svg" alt="Стрелка"></img>
                     <span class="button-text">Назад к новостям</span>
                 </a>
             </div>
@@ -38,6 +38,7 @@
             </div>
         </div>
     </div>
-    <?php include 'footer.php'; ?>
+<?php include 'footer.php'; ?>
+    <script src="../js/main.js"></script> 
 </body>
 </html>

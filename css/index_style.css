@@ -89,7 +89,15 @@ h2 {
     margin: 30px 0;
 }
 
+.title-active {
+    color: #841844;
+}
+
 @media (max-width: 1248px) {
+    .news {
+        flex-basis: 80%;
+    }
+
     .news-container {
         justify-content: space-around;
     }
@@ -101,7 +109,8 @@ h2 {
 
 @media (max-width: 500px) {
     .news-banner-text {
-        top: 0%;
+        max-height: 100%;
+        top: 10%;
     }
 }
 
