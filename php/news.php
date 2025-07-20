@@ -21,7 +21,7 @@ $row = $query->fetch_assoc();
 <?php include 'header.php'; ?>
     <div class="container">
         <div class="menu">
-            <a href="index.php">
+            <a href="../index.php">
                 <span class="menu-news-title">Главная</span=>
             </a>
             <span class="menu-news-title"> / </span>
