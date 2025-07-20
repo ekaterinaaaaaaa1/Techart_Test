@@ -1,3 +1,14 @@
+<?php
+require 'db.php';
+
+$id = (int)$_GET['id'];
+$page = (int)$_GET['page'];
+
+$sql = ("SELECT * FROM news WHERE id=$id");
+$query = $connection->query($sql);
+$row = $query->fetch_assoc();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,34 +22,30 @@
     <div class="container">
         <div class="menu">
             <a href="index.php">
-                <span>Главная</span=>
+                <span class="menu-news-title">Главная</span=>
             </a>
-            <span> / </span>
-            <span class="menu-news-title">Возвращение этнографа</span>
+            <span class="menu-news-title"> / </span>
+            <span><?php echo $row['title']; ?></span>
         </div>
-        <h1>Возвращение этнографа</h1>
+        <h1><?php echo $row['title'] ?></h1>
         <div class="news">
             <div class="news-content news-message">
-                <span class="news-date">11.06.2412</span>
-                <h2 class="news-announce">Cегодня с Проксимы вернулась этнографическая экспедиция Джона Голдрама.</h2>
-                <p class="news-text">Сегодня с Проксимы вернулась этнографическая экспедиция под управлением профессора Джона Голдрама из Майхартского университета. 
-                    Экспедиция работала в джунглях Туманного континента и занималась изучением неконтактного племени двухвостых зюзюмов.<br><br>"Это племя называет себя 
-                    Ракатука-Тум-Тум и крайне неохотно контактирует с пришельцами", - сказал Джон Голдрам. На вопрос о том, каковы они - неконтактные зюзюмы, профессор 
-                    заявил, что неконтактные зюзюмы такие же двухвостые и скандальные как и контактные, только неконтактные.<br><br>Ждем от профессора Голдрама новых 
-                    интересных подробностей!</p>
-                <a class="button news-button" href="index.php">
+                <span class="news-date"><?php echo date('d.m.Y', strtotime($row['date'])) ?></span>
+                <h2 class="news-announce"><?php echo $row['announce'] ?></h2>
+                <?php echo $row['content'] ?>
+                <a class="button news-button" href="../index.php?page=<?php echo $page; ?>">
                     <img class="button-arrow" src="../img/icons/reverse_arrow.svg" data-active="../img/icons/active_reverse_arrow.svg" alt="Стрелка"></img>
                     <span class="button-text">Назад к новостям</span>
                 </a>
             </div>
             <div class="news-content">
                 <div class="news-img-block">
-                    <img class="news-img" src="../img/news/c6e252ce94fd757ae97522197c394239.jpg" alt="">
+                    <img class="news-img" src="../img/news/<?php echo $row['image'] ?>" alt="Новость">
                 </div>
             </div>
         </div>
     </div>
 <?php include 'footer.php'; ?>
-    <script src="../js/main.js"></script> 
+    <script src="../js/news_main.js"></script> 
 </body>
 </html>

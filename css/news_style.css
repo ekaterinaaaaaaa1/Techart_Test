@@ -27,10 +27,17 @@ h1 {
     margin: 22px 0 63px 0;
 }
 
-h2 {
+p {
+    margin-bottom: 22px;
+}
+
+.news-announce p {
+    font-size: 2rem;
+    font-weight: 600;
     color: #841844;
     margin: 40px 0;
 }
+
 
 .news-button {
     width: 283px;
