@@ -77,7 +77,7 @@ $banner = $banner_query->fetch_assoc();
             </div>
         </div>
     </main>
-<?php include 'footer.php'; ?>
+<?php include 'php/footer.php'; ?>
     <script src="js/index_main.js"></script> 
 </body>
 </html>
