@@ -1,0 +1,7 @@
+RewriteEngine On
+
+RewriteRule ^$ /php/main.php [L]
+
+RewriteRule ^news/page-(\d+)/$ /index.php?page=$1 [L]
+RewriteRule ^news/(\d+)/$ /php/news.php?id=$1 [L]
+RewriteRule ^news/$ /index.php [L]

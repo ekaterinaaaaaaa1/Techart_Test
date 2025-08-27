@@ -54,7 +54,7 @@ $banner = $newsModel->getRows(0, 1)[0];
                     <?php
                     if ($page + $pageSwitchButtonCount <= $pageCount + 1) {
                         for ($i = 0; $i < $pageSwitchButtonCount; $i++): ?>
-                            <a href="/news/page-<?php echo $page + $i; ?>">
+                            <a href="/news/page-<?php echo $page + $i; ?>/">
                                 <button class="button page-switch-button button-text">
                                     <?php echo $page + $i; ?>
                                 </button>
@@ -63,7 +63,7 @@ $banner = $newsModel->getRows(0, 1)[0];
                     }
                     else {
                         for ($i = $pageSwitchButtonCount - 1; $i >= 0; $i--): ?>
-                            <a href="/news/page-<?php echo $pageCount - $i; ?>">
+                            <a href="/news/page-<?php echo $pageCount - $i; ?>/">
                                 <button class="button page-switch-button button-text">
                                     <?php echo $pageCount - $i; ?>
                                 </button>
@@ -72,7 +72,7 @@ $banner = $newsModel->getRows(0, 1)[0];
                     }
                     ?>
                 </div>
-                <a href="/news/page-<?php echo $page + 1; ?>">
+                <a href="/news/page-<?php echo $page + 1; ?>/">
                     <button class="button page-switch-button page-switch-button-arrow" <?php if ($page == $pageCount){?>style="display: none;"<?php } ?>>
                         <img class="page-switch-button-arrow-img" src="img/icons/next_page_arrow.svg" data-active="img/icons/active_next_page_arrow.svg" alt="Стрелка"></img>
                     </button>
