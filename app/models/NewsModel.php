@@ -1,5 +1,5 @@
 <?php
-require '../config/DB.php';
+require dirname(__DIR__, 2) . '/config/DB.php';
 
 class NewsModel
 {    

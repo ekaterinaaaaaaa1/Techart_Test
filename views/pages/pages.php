@@ -5,13 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Галактический вестник</title>
-    <link rel="stylesheet" href="../../../resources/css/index_style.css">
+    <link rel="stylesheet" href="../../resources/css/index_style.css">
 </head>
 <body>
 <?php include dirname(__DIR__, 1) . '/layouts/header.php'; ?>
     <main>
         <div class="news-banner">
-            <img class="news-banner-img" src="../../../resources/img/news/<?php echo $banner['image']; ?>" alt="Новость"></img>
+            <img class="news-banner-img" src="../../resources/img/news/<?php echo $banner['image']; ?>" alt="Новость"></img>
             <div class="news-banner-text">
                 <h1 class="news-banner-title"><?php echo $banner['title']; ?></h1>
                 <?php echo $banner['announce']; ?>
@@ -27,7 +27,7 @@
                     <p class="news-announce"><?php echo $row['announce']; ?></p>
                     <a class="button news-button" href="/news/<?php echo $row['id']; ?>/">
                         <span class="button-text">Подробнее </span>
-                        <img class="button-arrow" src="../../../resources/img/icons/arrow.svg" data-active="../../../resources/img/icons/active_arrow.svg" alt="Стрелка"></img>
+                        <img class="button-arrow" src="../../resources/img/icons/arrow.svg" data-active="../../resources/img/icons/active_arrow.svg" alt="Стрелка"></img>
                     </a>
                 </div>
                 <?php } ?>
@@ -57,13 +57,13 @@
                 </div>
                 <a href="/news/page-<?php echo $page + 1; ?>/">
                     <button class="button page-switch-button page-switch-button-arrow" <?php if ($page == $pageCount){?>style="display: none;"<?php } ?>>
-                        <img class="page-switch-button-arrow-img" src="../../../resources/img/icons/next_page_arrow.svg" data-active="../../../resources/img/icons/active_next_page_arrow.svg" alt="Стрелка"></img>
+                        <img class="page-switch-button-arrow-img" src="../../resources/img/icons/next_page_arrow.svg" data-active="../../resources/img/icons/active_next_page_arrow.svg" alt="Стрелка"></img>
                     </button>
                 </a>
             </div>
         </div>
     </main>
 <?php include dirname(__DIR__, 1) . '/layouts/footer.php'; ?>
-    <script src='../../../resources/js/index_main.js'></script> 
+    <script src='../../resources/js/index_main.js'></script> 
 </body>
 </html>

@@ -1,7 +1,5 @@
 RewriteEngine On
 
-RewriteRule ^$ /app/views/pages/main.php [L]
-
-RewriteRule ^news/page-(\d+)/$ /app/controllers/PagesController.php?page=$1 [L]
-RewriteRule ^news/(\d+)/$ /app/controllers/NewsController.php?id=$1 [L]
-RewriteRule ^news/$ /app/controllers/PagesController.php [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^.*$ index.php [L]

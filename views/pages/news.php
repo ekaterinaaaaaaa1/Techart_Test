@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Галактический вестник</title>
-    <link rel="stylesheet" href="../../../resources/css/news_style.css">
+    <link rel="stylesheet" href="/resources/css/news_style.css">
 </head>
 <body>
 <?php include dirname(__DIR__, 1) . '/layouts/header.php'; ?>
@@ -24,13 +24,13 @@
                 <h2 class="news-announce"><?php echo $row['announce'] ?></h2>
                 <?php echo $row['content'] ?>
                 <a class="button news-button" href="/news/">
-                    <img class="button-arrow" src="../../../resources/img/icons/reverse_arrow.svg" data-active="../../../resources/img/icons/active_reverse_arrow.svg" alt="Стрелка"></img>
+                    <img class="button-arrow" src="../../resources/img/icons/reverse_arrow.svg" data-active="../../resources/img/icons/active_reverse_arrow.svg" alt="Стрелка"></img>
                     <span class="button-text">Назад к новостям</span>
                 </a>
             </div>
             <div class="news-content">
                 <div class="news-img-block">
-                    <img class="news-img" src="../../../resources/img/news/<?php echo $row['image'] ?>" alt="Новость">
+                    <img class="news-img" src="../../resources/img/news/<?php echo $row['image'] ?>" alt="Новость">
                 </div>
             </div>
         </div>
