@@ -1,20 +1,3 @@
-<?php
-require 'php/NewsModel.php';
-
-$pageNewsCount = 4;
-$pageSwitchButtonCount = 3;
-
-$newsModel = new NewsModel();
-$newsCount = $newsModel->getCount();
-
-$pageCount = ceil($newsCount / $pageNewsCount);
-$page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
-
-$offset = ($page - 1) * $pageNewsCount;
-
-$banner = $newsModel->getRows(0, 1)[0];
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,13 +5,13 @@ $banner = $newsModel->getRows(0, 1)[0];
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Галактический вестник</title>
-    <link rel="stylesheet" href="css/index_style.css">
+    <link rel="stylesheet" href="../../../resources/css/index_style.css">
 </head>
 <body>
-<?php include 'php/header.php'; ?>
+<?php include dirname(__DIR__, 1) . '/layouts/header.php'; ?>
     <main>
         <div class="news-banner">
-            <img class="news-banner-img" src="img/news/<?php echo $banner['image']; ?>" alt="Новость"></img>
+            <img class="news-banner-img" src="../../../resources/img/news/<?php echo $banner['image']; ?>" alt="Новость"></img>
             <div class="news-banner-text">
                 <h1 class="news-banner-title"><?php echo $banner['title']; ?></h1>
                 <?php echo $banner['announce']; ?>
@@ -44,7 +27,7 @@ $banner = $newsModel->getRows(0, 1)[0];
                     <p class="news-announce"><?php echo $row['announce']; ?></p>
                     <a class="button news-button" href="/news/<?php echo $row['id']; ?>/">
                         <span class="button-text">Подробнее </span>
-                        <img class="button-arrow" src="img/icons/arrow.svg" data-active="img/icons/active_arrow.svg" alt="Стрелка"></img>
+                        <img class="button-arrow" src="../../../resources/img/icons/arrow.svg" data-active="../../../resources/img/icons/active_arrow.svg" alt="Стрелка"></img>
                     </a>
                 </div>
                 <?php } ?>
@@ -74,13 +57,13 @@ $banner = $newsModel->getRows(0, 1)[0];
                 </div>
                 <a href="/news/page-<?php echo $page + 1; ?>/">
                     <button class="button page-switch-button page-switch-button-arrow" <?php if ($page == $pageCount){?>style="display: none;"<?php } ?>>
-                        <img class="page-switch-button-arrow-img" src="img/icons/next_page_arrow.svg" data-active="img/icons/active_next_page_arrow.svg" alt="Стрелка"></img>
+                        <img class="page-switch-button-arrow-img" src="../../../resources/img/icons/next_page_arrow.svg" data-active="../../../resources/img/icons/active_next_page_arrow.svg" alt="Стрелка"></img>
                     </button>
                 </a>
             </div>
         </div>
     </main>
-<?php include 'php/footer.php'; ?>
-    <script src="js/index_main.js"></script> 
+<?php include dirname(__DIR__, 1) . '/layouts/footer.php'; ?>
+    <script src='../../../resources/js/index_main.js'></script> 
 </body>
 </html>

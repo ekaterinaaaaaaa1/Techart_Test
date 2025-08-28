@@ -1,5 +1,5 @@
 <?php
-require 'DB.php';
+require '../config/DB.php';
 
 class NewsModel
 {    
