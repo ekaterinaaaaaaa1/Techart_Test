@@ -1,5 +1,5 @@
 <?php
-require dirname(__DIR__, 2) . '/config/DB.php';
+namespace App\Models;
 
 class NewsModel
 {    
@@ -7,7 +7,7 @@ class NewsModel
     {
         $query = "SELECT COUNT(*) AS TOTAL FROM `news`";
 
-        return DB::getScalar($query);
+        return \Config\DB::getScalar($query);
     }
 
     function getRows($offset, $limit)
@@ -16,7 +16,7 @@ class NewsModel
         $types = 'ii';
         $params = [$limit, $offset];
 
-        return DB::getRows($query, $params, $types);
+        return \Config\DB::getRows($query, $params, $types);
     }
 
     function getItem($id)
@@ -25,7 +25,7 @@ class NewsModel
         $types = 'i';
         $params = [$id];
 
-        $result = DB::getRow($query, $params, $types);
+        $result = \Config\DB::getRow($query, $params, $types);
 
         if (empty($result))
         {

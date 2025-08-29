@@ -1,6 +1,8 @@
 <?php
+namespace App\Routes;
 
-class Route {
+class Route
+{
     private static $routes = array(
         '~^/$~' => 'actionMain',
         '~^/news/page-(\d+)/$~' => 'actionPages',
@@ -14,8 +16,7 @@ class Route {
 
         if (preg_match(array_key_first(self::$routes), $request_uri, $matches))
         {
-            require dirname(__DIR__, 1) . '/app/controllers/MainController.php';
-            MainController::actionMain();
+            \App\Controllers\MainController::actionMain();
         }
         array_shift(self::$routes);
 
@@ -23,8 +24,7 @@ class Route {
         {
             if (preg_match($key, $request_uri, $matches))
             {
-                require dirname(__DIR__, 1) . '/app/controllers/NewsController.php';
-                count($matches) > 1 ? NewsController::$value($matches[1]) : NewsController::$value();
+                count($matches) > 1 ? \App\Controllers\NewsController::$value($matches[1]) : \App\Controllers\NewsController::$value();
                 break;
             }
         }

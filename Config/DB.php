@@ -1,12 +1,12 @@
 <?php
-require 'config.php';
+namespace Config;
 
 class DB
 {
-    private static $host = DB_CONFIG['host'];
-    private static $userName = DB_CONFIG['user_name'];
-    private static $password = DB_CONFIG['password'];
-    private static $dbName = DB_CONFIG['db_name'];
+    private static $host = \Config\Config::DB_CONFIG['host'];
+    private static $userName = \Config\Config::DB_CONFIG['user_name'];
+    private static $password = \Config\Config::DB_CONFIG['password'];
+    private static $dbName = \Config\Config::DB_CONFIG['db_name'];
 
     private static $connection;
 

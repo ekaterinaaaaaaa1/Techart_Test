@@ -1,5 +1,5 @@
 <?php
-require dirname(__DIR__, 1) . '/models/NewsModel.php';
+namespace App\Controllers;
 
 class NewsController
 {   
@@ -8,7 +8,7 @@ class NewsController
         $pageNewsCount = 4;
         $pageSwitchButtonCount = 3;
 
-        $newsModel = new NewsModel();
+        $newsModel = new \App\Models\NewsModel();
         $newsCount = $newsModel->getCount();
 
         $pageCount = ceil($newsCount / $pageNewsCount);
@@ -22,7 +22,7 @@ class NewsController
 
     static function actionNews($id)
     {
-        $newsModel = new NewsModel();
+        $newsModel = new \App\Models\NewsModel();
         $row = $newsModel->getItem($id);
 
         include dirname(__DIR__, 2) . '/views/pages/news.php';
