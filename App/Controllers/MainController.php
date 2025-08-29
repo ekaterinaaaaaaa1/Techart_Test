@@ -5,6 +5,11 @@ class MainController
 {
     static function actionMain()
     {
-        include dirname(__DIR__, 2) . '/views/pages/main.php';
+        $content = \App\Views\View::render(dirname(__DIR__, 2) . '/Views/main.php', []);
+
+        echo \App\Views\View::render(dirname(__DIR__, 2) . '/Views/Layouts/layout.php', [
+            'content' => $content,
+            'css' => 'Resources/css/main_style.css'
+        ]);
     }
 }
