@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Галактический вестник</title>
-    <?php if (!empty($css)) {?>
-        <link rel="stylesheet" href=<?php echo $css?>>
+    <?php if (!empty(self::$css)) { ?>
+        <link rel="stylesheet" href=<?php echo self::$css?>>
     <?php } ?>
 </head>
 <body>
@@ -22,8 +22,8 @@
             <span class="footer-copyright">&copy; 2023 — 2412 «Галактический вестник»</span>
         </div>
     </footer>
-    <?php if (!empty($js)) {?>
-        <script src=<?php echo $js?>></script> 
+    <?php if (!empty(self::$js)) { ?>
+        <script src=<?php echo self::$js?>></script> 
     <?php } ?>
 </body>
 </html>

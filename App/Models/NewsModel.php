@@ -27,8 +27,7 @@ class NewsModel
 
         $result = \Config\DB::getRow($query, $params, $types);
 
-        if (empty($result))
-        {
+        if (empty($result)) {
             echo 'Новость с id=' . $id . ' не найдена!';
             die();
         }

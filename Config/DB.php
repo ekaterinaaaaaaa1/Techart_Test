@@ -12,8 +12,7 @@ class DB
 
     static function getConnection()
     {
-        if (empty(self::$connection))
-        {
+        if (empty(self::$connection)) {
             self::$connection = mysqli_connect(
                 self::$host,
                 self::$userName,
@@ -21,8 +20,7 @@ class DB
                 self::$dbName
             );
 
-            if(!self::$connection)
-            {
+            if (!self::$connection) {
                 echo 'Не удалось подключиться к базе данных!';
                 echo mysqli_connect_error();
                 die();
@@ -36,8 +34,7 @@ class DB
     {
         $query = self::prepare($str);
         
-        if ($params != [])
-        {
+        if ($params != []) {
             $query->bind_param($types, ...$params);
         }
 
@@ -45,8 +42,7 @@ class DB
         $result = $query->get_result();
         
         $rows = [];
-        while ($row = $result->fetch_assoc())
-        {
+        while ($row = $result->fetch_assoc()) {
             $rows[] = $row;
         }
 

@@ -1,4 +1,4 @@
-@import "style.css";
+@import "../style.css";
 .news-banner {
     position: relative;
     display: flex;

@@ -16,7 +16,7 @@ class NewsController
 
         $banner = $newsModel->getRows(0, 1)[0];
 
-        $content = \App\Views\View::render(dirname(__DIR__, 2) . '/Views/News/list.php', [
+        \App\Views\View::render('News/list', [
             'pageNewsCount' => $pageNewsCount,
             'pageSwitchButtonCount' => $pageSwitchButtonCount,
             'page' => $page,
@@ -26,12 +26,6 @@ class NewsController
             'offset' => $offset,
             'banner' => $banner
         ]);
-
-        echo \App\Views\View::render(dirname(__DIR__, 2) . '/Views/Layouts/layout.php', [
-            'content' => $content,
-            'css' => 'Resources/css/index_style.css',
-            'js' => 'Resources/js/index_main.js'
-        ]);
     }
 
     static function actionNews($id)
@@ -39,15 +33,9 @@ class NewsController
         $newsModel = new \App\Models\NewsModel();
         $row = $newsModel->getItem($id);
 
-        $content = \App\Views\View::render(dirname(__DIR__, 2) . '/Views/News/details.php', [
+        \App\Views\View::render('News/detail', [
             'newsModel' => $newsModel,
             'row' => $row
-        ]);
-
-        echo \App\Views\View::render(dirname(__DIR__, 2) . '/Views/Layouts/layout.php', [
-            'content' => $content,
-            'css' => 'Resources/css/news_style.css',
-            'js' => 'Resources/js/news_main.js'
         ]);
     }
 }
